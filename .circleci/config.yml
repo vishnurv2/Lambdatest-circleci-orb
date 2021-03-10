@@ -1,14 +1,26 @@
 version: 2.1
 
 orbs:
-  orb-tools: circleci/orb-tools@9.1.0
+    lambda-tunnel: lambdatest/lambda-tunnel@volatile
 
-workflows:
-  publish:
-    jobs:
-      - orb-tools/increment:
-          orb-path: src/orb.yml
-          orb-ref: lambdatest/lambda-tunnel
-          validate: true
-          checkout: true
-          publish-token-variable: ORB_PUBLISHING_TOKEN
+workflows:      
+    basic_workflow:
+        jobs:
+          - lambda-tunnel/with_tunnel:
+              name: "Chrome test"
+              tunnel_name: "chrome"
+              lambdatest_email: "vishnukdas"
+              steps:
+                - run: 
+                    command: |
+                      npm install
+                      node_modules/.bin/nightwatch -e chrome
+          - lambda-tunnel/with_tunnel:
+              name: "Firefox test"
+              tunnel_name: "firefox"
+              lambdatest_email: "vishnukdas"
+              steps:
+                - run: 
+                    command: |
+                      npm install
+                      node_modules/.bin/nightwatch -e firefox
