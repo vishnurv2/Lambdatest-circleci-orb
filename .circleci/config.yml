@@ -11,3 +11,4 @@ workflows:
           orb-ref: lambdatest/lambda-tunnel
           validate: true
           checkout: true
+          publish-token-variable: ORB_PUBLISHING_TOKEN
