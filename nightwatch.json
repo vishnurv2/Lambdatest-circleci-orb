@@ -32,8 +32,8 @@
         "enabled" : true,
         "path" : ""
       },
-      "username" : "vishnukdas",
-      "access_key" : "40fkQ3JuRlYMzd4ff7uqkqXCTnwvvkEB7FWJz1sLS2qSqoEDal",
+      "username" : "",
+      "access_key" : "",
 
       "skip_testcases_on_fail": false,
 
