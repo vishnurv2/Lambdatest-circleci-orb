@@ -13,7 +13,7 @@ workflows:
               steps:
                 - run: 
                     command: |
-                      -npm install
-                      -export LT_ACCESS_KEY="40fkQ3JuRlYMzd4ff7uqkqXCTnwvvkEB7FWJz1sLS2qSqoEDal"
-                      -export LT_USERNAME="vishnukdas"
-                      -node_modules/.bin/nightwatch -e chrome
+                      npm install
+                      export LT_ACCESS_KEY="40fkQ3JuRlYMzd4ff7uqkqXCTnwvvkEB7FWJz1sLS2qSqoEDal"
+                      export LT_USERNAME="vishnukdas"
+                      node_modules/.bin/nightwatch -e chrome
